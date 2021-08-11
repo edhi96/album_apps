@@ -1,12 +1,13 @@
 package com.sarwoedhi.albumapps.data.source
 
+import com.sarwoedhi.albumapps.data.response.DetailMovieResponse
 import com.sarwoedhi.albumapps.data.response.MovieResponse
-import okhttp3.ResponseBody
 import retrofit2.Call
 
-interface AlbumDataSource {
+interface MovieDataSource {
 
     fun getAllMovies(): Call<MovieResponse>
 
-    fun downloadPicture(path:String?):Call<ResponseBody>
+    fun getDetailMovies(id:String): Call<DetailMovieResponse>
+
 }

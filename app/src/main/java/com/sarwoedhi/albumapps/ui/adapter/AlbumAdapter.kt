@@ -48,9 +48,9 @@ class AlbumAdapter(private var albumList : ArrayList<Movie>) : RecyclerView.Adap
             binding.ivDownload.setImageResource(R.drawable.ic_download)
             if(album.downloaded) binding.ivDownload.visibility = View.GONE else binding.ivDownload.visibility = View.VISIBLE
             if(album.isDownloading) binding.progressDownload.visibility = View.VISIBLE else binding.progressDownload.visibility = View.GONE
-            binding.ivDownload.setOnClickListener {
+            binding.rootLayout.setOnClickListener {
                 onItemClickCallback?.onItemClicked(album,idx)
-                notifyItemChanged(idx)
+                notifyDataSetChanged()
             }
         }
     }

@@ -1,8 +1,8 @@
 package com.sarwoedhi.albumapps.di
 
-import com.sarwoedhi.albumapps.data.source.AlbumRepository
+import com.sarwoedhi.albumapps.data.source.MovieRepository
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    factory { AlbumRepository(get(),get()) }
+    single { MovieRepository(get()) }
 }

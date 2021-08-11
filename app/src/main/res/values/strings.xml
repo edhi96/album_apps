@@ -1,4 +1,24 @@
 <resources>
     <string name="app_name">Album Apps</string>
     <string name="data_tidak_ditemukan">Data tidak ditemukan</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tv_show">Tv Show</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="overview">Overview</string>
+    <string name="image_detail_movie">image detail movie</string>
+    <string name="popularity">Popularity</string>
+    <string name="release_date">Release</string>
+    <string name="genre">Genre</string>
+    <string name="title">Title</string>
+    <string name="creator">Creator</string>
+    <string name="choose">You choose</string>
+    <string name="rating">Rating</string>
+    <string name="cast">Casting</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="movie_description">description</string>
+    <string name="movie_name">Title Movie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

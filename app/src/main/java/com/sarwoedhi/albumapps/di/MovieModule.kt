@@ -5,7 +5,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 
 val apiModule = module {
-    single { provideApiService(get()) }
+    single { provideMovieApiService(get()) }
 }
 
-private fun provideApiService(retrofit: Retrofit): MovieApi = retrofit.create(MovieApi::class.java)
+private fun provideMovieApiService(retrofit: Retrofit): MovieApi = retrofit.create(MovieApi::class.java)
