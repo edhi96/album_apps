@@ -1,4 +1,4 @@
-package com.sarwoedhi.albumapps.ui.dialog
+package com.sarwoedhi.albumapps.ui.dialog.info_confirmation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -47,16 +47,16 @@ class InfoConfirmationDialog : DialogFragment() {
 
     private fun loadArguments() {
         arguments?.let {
-            title = it.getString("BUNDLE_TITLE_DIALOG")?:""
+            title = it.getString(Params.BUNDLE_TITLE_DIALOG)?:""
         }
         arguments?.let {
-            detailMovie = it.getParcelable("BUNDLE_DESC_DIALOG")
+            detailMovie = it.getParcelable(Params.BUNDLE_DESC_DIALOG)
         }
         arguments?.let {
-            btnText = it.getString("BUNDLE_BUTTON_DIALOG")?:""
+            btnText = it.getString(Params.BUNDLE_BUTTON_DIALOG)?:""
         }
         arguments?.let {
-            iconPicture = it.getInt("BUNDLE_ICON_DIALOG")
+            iconPicture = it.getInt(Params.BUNDLE_ICON_DIALOG)
         }
     }
 
