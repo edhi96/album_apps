@@ -31,17 +31,18 @@
                 android:id="@+id/tvTitlePlayer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Some Title Here"
-                android:maxLines="1"
                 android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Some Title Here"
                 android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/tvTimePlayer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                tools:text="04:32"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                tools:text="04:32" />
         </LinearLayout>
 
         <TextView
@@ -61,24 +62,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginTop="20dp"
-            android:numStars="10"
             android:isIndicator="true"
             android:max="18"
+            android:numStars="10"
             android:text="Lorem ipsum dolor sit amet, consectur adipiscing elit."
             android:textSize="18sp" />
     </LinearLayout>
 
-
-    <ImageView
-        android:id="@+id/ivDownload"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="12dp"
-        tools:background="@color/black" />
-    <ProgressBar
-        android:id="@+id/progressDownload"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center" />
 </LinearLayout>

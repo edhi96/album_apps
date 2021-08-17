@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.sarwoedhi.albumapps.data.models.Movie
 import com.sarwoedhi.albumapps.data.response.DetailMovieResponse
 import com.sarwoedhi.albumapps.data.response.MovieResponse
-import com.sarwoedhi.albumapps.data.source.MovieRepository
+import com.sarwoedhi.albumapps.data.source.remote.movie.MovieRepository
 import com.sarwoedhi.albumapps.utils.Resource
 import okhttp3.MultipartBody
 import org.json.JSONObject

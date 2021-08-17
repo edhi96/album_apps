@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -15,18 +16,47 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
-        buildConfigField("String", "API_KEY", "\"${API_KEY}\"")
-        buildConfigField("String", "IMAGE_URL", "\"${IMAGE_URL}\"")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions('tier')
+    productFlavors {
+        develop {
+            dimension 'tier'
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "API_KEY", "\"${API_KEY}\"")
+            buildConfigField("String", "IMAGE_URL", "\"${IMAGE_URL}\"")
+        }
+
+        staging {
+            dimension 'tier'
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "API_KEY", "\"${API_KEY}\"")
+            buildConfigField("String", "IMAGE_URL", "\"${IMAGE_URL}\"")
+        }
+
+        production {
+            dimension 'tier'
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "API_KEY", "\"${API_KEY}\"")
+            buildConfigField("String", "IMAGE_URL", "\"${IMAGE_URL}\"")
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -38,6 +68,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 
 
 }
@@ -75,6 +106,17 @@ dependencies {
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
 
+    implementation platform('com.google.firebase:firebase-bom:28.3.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
+
+    implementation "org.jetbrains.anko:anko-commons:0.10.8"
+
     // Dependencies for Idle Resource
     implementation "androidx.test.espresso:espresso-idling-resource:3.4.0"
 
@@ -88,6 +130,5 @@ dependencies {
     implementation "org.koin:koin-android:2.1.6"
     implementation "org.koin:koin-android-viewmodel:2.1.6"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
+
 }

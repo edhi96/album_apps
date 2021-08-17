@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sarwoedhi.albumapps.R
@@ -14,11 +16,12 @@ import com.sarwoedhi.albumapps.data.models.Movie
 import com.sarwoedhi.albumapps.databinding.FragmentHomeBinding
 import com.sarwoedhi.albumapps.ui.adapter.AlbumAdapter
 import com.sarwoedhi.albumapps.ui.detail.DetailActivity
-import com.sarwoedhi.albumapps.ui.dialog.info_confirmation.InfoConfirmationDialog
 import com.sarwoedhi.albumapps.ui.dialog.bottom_sheet.DetailItemDialogFragment
+import com.sarwoedhi.albumapps.ui.dialog.info_confirmation.InfoConfirmationDialog
 import com.sarwoedhi.albumapps.utils.Status
 import okhttp3.MultipartBody
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class HomeFragment : Fragment() {
 
@@ -42,6 +45,9 @@ class HomeFragment : Fragment() {
 
     private fun searchFunction() {
         binding.svMovie.queryHint = resources.getString(R.string.title_movie)
+        val searchEditText = binding.svMovie.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
+        searchEditText.setTextColor(ContextCompat.getColor(requireContext(),R.color.orange))
+     //   searchEditText.setHintTextColor(ContextCompat.getColor(requireContext(),R.color.orange))
         binding.svMovie.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 return false

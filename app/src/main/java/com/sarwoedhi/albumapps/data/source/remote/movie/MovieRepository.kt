@@ -1,11 +1,10 @@
-package com.sarwoedhi.albumapps.data.source
+package com.sarwoedhi.albumapps.data.source.remote.movie
 
 import com.sarwoedhi.albumapps.BuildConfig.API_KEY
 import com.sarwoedhi.albumapps.data.models.body.LoginBody
 import com.sarwoedhi.albumapps.data.response.DetailMovieResponse
 import com.sarwoedhi.albumapps.data.response.MovieResponse
 import com.sarwoedhi.albumapps.data.source.remote.api.MovieApi
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -24,10 +23,12 @@ class MovieRepository constructor(private val movieApi: MovieApi) :
         return movieApi.getDetailMovie(movieId = id,apiKey=API_KEY)
     }
 
+    //only example of code, cant use
     override fun postLogin(email: String, password: String, deviceToken: String): Call<DetailMovieResponse> {
         return movieApi.login(LoginBody(email = email,password=password,deviceToken))
     }
 
+    //only example of code, cant use
     override fun updateProfileWithPhoto(
         token: String,
         nameProfile: String,

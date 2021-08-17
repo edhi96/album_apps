@@ -44,6 +44,16 @@
         tools:text="Title Test Test"
         tools:visibility="visible" />
 
+    <ImageView
+        android:id="@+id/ivFavorite"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitleBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTitleBar" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/_2sdp"
